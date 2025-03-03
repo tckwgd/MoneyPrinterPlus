@@ -58,6 +58,8 @@ llm:
     secret_key: YOUR_SK_KEY
     model_name: ERNIE-Bot-turbo
   provider: Moonshot
+  gemini:
+    api_key: ""
 resource:
   pexels:
     api_key: API_KEY
