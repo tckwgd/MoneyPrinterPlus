@@ -35,7 +35,7 @@ common_ui()
 
 st.markdown(f"<h1 style='text-align: center; font-weight:bold; font-family:comic sans ms; padding-top: 0rem;'> \
             {app_title}</h1>", unsafe_allow_html=True)
-st.markdown("<h2 style='text-align: center;padding-top: 0rem;'>基本配置信息</h2>", unsafe_allow_html=True)
+st.markdown("<h2 style='text-align: center;padding-top: 0rem;'>基本配置</h2>", unsafe_allow_html=True)
 
 if 'ui_language' not in st.session_state:
     st.session_state['ui_language'] = 'zh-CN - 简体中文'
