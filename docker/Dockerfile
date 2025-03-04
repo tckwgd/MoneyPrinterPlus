@@ -8,8 +8,8 @@ FROM python:3.12-slim
 
 WORKDIR /app
 
-# 复制项目文件
-COPY . .
+# 先复制 requirements.txt
+COPY requirements.txt .
 
 # 安装依赖
 RUN apt-get update && \
@@ -18,8 +18,13 @@ RUN apt-get update && \
     portaudio19-dev \
     libgtk-3-dev \
     git && \
-    pip install --no-cache-dir -r requirements.txt && \
-    apt-get clean && \
+    pip install --no-cache-dir -r requirements.txt
+
+# 复制其余项目文件
+COPY . .
+
+# 清理
+RUN apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
 EXPOSE 8501
