@@ -34,7 +34,7 @@ Run sed -i 's/deb.debian.org/mirrors.ustc.edu.cn/g' /etc/apt/sources.list.d/debi
 #
 # Get For MoneyPrinterPlus v4.7
     cd /root/dist/ && \
-    git clone -b v4.7 https://github.com/ddean2009/MoneyPrinterPlus.git && \
+    COPY . /app/MoneyPrinterPlus && \
     pip install --break-system-packages --no-cache-dir --ignore-installed -r /root/dist/MoneyPrinterPlus/requirements.txt  && \
     chmod +x /root/dist/rmmp.sh && \
 #
