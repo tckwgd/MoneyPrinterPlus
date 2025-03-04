@@ -10,6 +10,8 @@ ENV DEBIAN_FRONTEND noninteractive
 MAINTAINER zihan<fengapi@gmail.com>
 # Include dist
 COPY dist/ /root/dist/
+# 新增：复制项目文件到容器
+COPY . /root/dist/MoneyPrinterPlus/
 #
 
 # Set Mirrors For China & Install Base
@@ -34,7 +36,6 @@ Run sed -i 's/deb.debian.org/mirrors.ustc.edu.cn/g' /etc/apt/sources.list.d/debi
 #
 # Get For MoneyPrinterPlus v4.7
     cd /root/dist/ && \
-    COPY . /app/MoneyPrinterPlus && \
     pip install --break-system-packages --no-cache-dir --ignore-installed -r /root/dist/MoneyPrinterPlus/requirements.txt  && \
     chmod +x /root/dist/rmmp.sh && \
 #
